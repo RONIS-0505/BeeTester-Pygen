@@ -42,7 +42,7 @@ class BeeTester:
 
         if Path(archive_url).stem not in self._work_dir_path.iterdir():
             self._temp_directory_path: Path = (
-                self._work_dir_path / Path(archive_url).stem
+                    self._work_dir_path / Path(archive_url).stem
             )
             self._temp_directory_path.mkdir(exist_ok=True)
             logger.info(" Created temporary directory and starting unpacking")
@@ -83,7 +83,7 @@ class BeeTester:
                     mismatched_lines: list[str] = []
 
                     for (string_num, right_answers), output in zip(
-                        enumerate(ans, 1), task_outputs
+                            enumerate(ans, 1), task_outputs
                     ):
                         if right_answers != output:
                             mismatched_lines.append(
